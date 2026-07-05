@@ -1,0 +1,28 @@
+import pygame
+import sys
+
+pygame.init()
+
+screen=pygame.display.set_mode((800,600))
+pygame.display.set_caption("my first game")
+
+blue=(0,120,255)
+white=(255,255,255)
+
+font=pygame.font.SysFont("arial",40)
+text=font.render("my first game",True,white)
+text_rect=text.get_rect(center=(400,300))
+
+running=True
+
+while running:
+    for event in pygame.event.get():
+        if event.type==pygame.QUIT: 
+            running=False
+
+screen.fill(blue)
+screen.blit(text,text_rect)
+pygame.display.update()
+
+pygame.quit()
+sys.exit()
