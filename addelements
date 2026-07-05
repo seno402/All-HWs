@@ -1,0 +1,16 @@
+import pygame
+pygame.init()
+screen=pygame.display.set_mode((800,600))
+pygame.display.set_caption("game")
+font=pygame.font.SysFont(None,40)
+text=font.render("hello",True,(255,255,255))
+run=True
+while run:
+    for event in pygame.event.get():
+        if event.type==pygame.QUIT:
+            run=False
+    screen.fill((0,0,0))
+    pygame.draw.rect(screen,(0,255,0),(250,200,300,150))
+    screen.blit(text,(330,260))
+    pygame.display.update()
+pygame.quit()
