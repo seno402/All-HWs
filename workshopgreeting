@@ -1,0 +1,25 @@
+import tkinter as tk
+
+def checkin():
+    name = entry.get()
+    output.delete("1.0",tk.END)
+    output.insert(tk.END,"welcome "+name+"!\n")
+    output.insert(tk.END,"thanks for coming to the workshop.\n")
+    output.insert(tk.END,"workshop date is september 6 2026")
+
+window = tk.Tk()
+window.title("workshop check in")
+window.geometry("400x300")
+
+tk.Label(window,text="workshop check in").pack()
+tk.Label(window,text="enter your name").pack()
+
+entry = tk.Entry(window)
+entry.pack()
+
+tk.Button(window,text="check in",command=checkin).pack()
+
+output = tk.Text(window,height=6,width=40)
+output.pack()
+
+window.mainloop()
